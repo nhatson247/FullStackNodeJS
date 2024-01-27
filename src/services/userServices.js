@@ -24,7 +24,7 @@ let handleUserLogin = (email, password) => {
         let user = await db.User.findOne({
           where: { email: email },
           // chỉ định lấy 2 thuộc tính của tài khoản
-          attributes: ["email", "password", "roleid"],
+          attributes: ["email", "password", "roleid", "firstName", "lastName"],
           raw: true, // ket hop vs delete
         });
         if (user) {
